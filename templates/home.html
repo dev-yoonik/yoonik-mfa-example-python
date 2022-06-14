@@ -1,0 +1,30 @@
+{% extends "template.html" %}
+
+{% block content %}
+<h2>{{ provider }} Login + YooniK Face Authentication</h2>
+
+{% if current_user.is_authenticated %}
+<div>
+    <p><b>Welcome back!</b></p>
+    <p>You have successfully authenticated with your {{ provider }} account using YooniK Face Authentication as Second-Factor.</p>
+    <p>Visit the <a href="{{ url_for('profile') }}">My Profile</a> page to view the information retrieved with your OAuth Access Token.</p>
+</div>
+{% else %}
+<div>
+    <p>Hello!</p>
+    <p>If you're viewing this page then you have successfully configured and started this example server.</p>
+    <p>Let's describe the steps:</p>
+    <ol>
+        <li>Click login</li>
+        <li>Perform your {{ provider }} login</li>
+        <li>Authenticate with YooniK.</li>
+    </ol>
+    <p>That's it! After this steps you will be logged in this app.</p>
+    <p><b>Note: an YooniK account will be created with the sub(ject) value from the Token provided by the OIDC. Once logged in if you choose, you may delete the account.</b></p>
+</div>
+
+<form method="get" action="login">
+    <button id="login-button" class="btn btn-primary" type="submit">Login</button>
+</form>
+{% endif %}
+{% endblock content %}

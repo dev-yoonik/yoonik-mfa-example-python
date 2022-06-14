@@ -1,0 +1,18 @@
+{
+  "oidc_base_url": "yourOidcBaseUrl",
+  "auth_url": "yourAuthRelativeUrl",
+  "token_url": "yourTokenRelativeUrl",
+  "userinfo_url": "yourUserInfoRelativeUrl",
+  "token_validation_url": null,
+
+  "redirect_url": "http://127.0.0.1:8080/authorization-code/callback",
+
+  "client_id": "yourClientId",
+  "client_secret": "yourClientSecret",
+
+  "yoonik_authentication_api_url": "yoonikApiUrl",
+  "yoonik_authentication_api_key": "yoonikApiKey",
+
+  "__oidc_base_url_comment__": "Make sure the last character is a forward slash",
+  "__token_validation_comment__": "The token validation url. Currently used on OneLogin"
+}
